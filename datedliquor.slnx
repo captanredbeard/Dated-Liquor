@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="datedliquor/CakeBuild/CakeBuild.csproj" />
+  <Project Path="datedliquor/datedliquor/datedliquor.csproj" />
+</Solution>

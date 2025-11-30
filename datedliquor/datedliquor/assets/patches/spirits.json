@@ -1,0 +1,42 @@
+[
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "datedliquor:AlcoholInfo"
+      }
+    ],
+    "file": "game:itemtypes/liquid/spirit.json"
+  },
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "datedliquor:AlcoholInfo"
+      }
+    ],
+    "file": "game:itemtypes/liquid/spirit.json"
+  },
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "datedliquor:AlcoholInfo"
+      }
+    ],
+    "file": "game:itemtypes/liquid/alcohol.json"
+  },
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "datedliquor:AlcoholInfo"
+      }
+    ],
+    "file": "game:itemtypes/liquid/cider.json"
+  }
+]
