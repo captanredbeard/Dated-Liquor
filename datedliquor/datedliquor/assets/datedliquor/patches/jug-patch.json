@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "BlockBottle",
+    "file": "game:blocktypes/clay/fired/jug.json"
+  }
+]

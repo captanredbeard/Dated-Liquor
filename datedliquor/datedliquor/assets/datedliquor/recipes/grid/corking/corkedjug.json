@@ -1,0 +1,39 @@
+[
+	{
+		ingredientPattern: "C,G",
+		ingredients: {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": { type: "block", code: "game:jug-*-fired", name: "color" }
+		},
+		width: 1,
+		height: 2,
+		name: "corkedclayjug",
+		output: {
+			"type": "block",
+			"code": "game:jug-{color}-corked"
+		},
+		copyAttributesFrom: "G"
+	},
+	{
+		ingredientPattern: "G",
+		ingredients: {
+			"G": {
+				"type": "block",
+				"code": "game:jug-*-corked",
+				"name": "color",
+				"returnedStack": {
+					"type": "item",
+					"code": "aculinaryartillery:cork-generic"
+				}
+			}
+		},
+		width: 1,
+		height: 1,
+		name: "uncorkedclayjug",
+		output: { type: "block", code: "game:jug-{color}-fired" },
+		copyAttributesFrom: "G"
+	}
+]
