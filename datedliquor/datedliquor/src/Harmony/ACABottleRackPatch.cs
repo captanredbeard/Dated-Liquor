@@ -26,10 +26,10 @@ namespace datedliquor.src.Harmony
                 //Check if Corner rack and bottle being placed is a winebottle
                 if(__instance.Block.Code.PathStartsWith("bottlerackcorner") && bottle.Code.PathStartsWith("winebottle"))
                 {
-                    __instance.Api.Logger.Event("blocksel:"+blockSel.SelectionBoxIndex);
+                    __instance.Api.Logger.Error("blocksel:"+blockSel.SelectionBoxIndex);
                     var index = blockSel.SelectionBoxIndex;
 
-                var sideslots = __instance.Inventory.GetSlotsIfExists(byPlayer, [__instance.Inventory.InventoryID], [index - 1, index + 1]);
+               // var sideslots = __instance.Inventory.GetSlotsIfExists(byPlayer, [__instance.Inventory.InventoryID], [index - 1, index + 1]);
                
                 
                 if (false)
@@ -44,7 +44,7 @@ namespace datedliquor.src.Harmony
                     {
                         (__instance.Api as ICoreClientAPI)?.TriggerIngameError(__instance, "bottletoofull", Lang.Get("aculinaryartillery:bottle-toofullforrack"));
                         __result = false;
-                        return false;
+                        return true;
                     }
                 }
             }
