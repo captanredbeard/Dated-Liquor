@@ -1,5 +1,6 @@
 {
 	"code": "winebottle",
+	"class": "datedliquor:CorkedContainer",
 	"variantgroups": [
 		{
 			"code": "material",

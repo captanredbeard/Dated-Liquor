@@ -1,5 +1,6 @@
 {
 	"code": "growler",
+	"class": "datedliquor:CorkedContainer",
 	"variantgroups": [
 		{
 			"code": "material",

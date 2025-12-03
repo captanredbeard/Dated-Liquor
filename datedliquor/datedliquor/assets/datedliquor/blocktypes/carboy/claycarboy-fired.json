@@ -1,6 +1,6 @@
 {
 	"code": "carboy",
-	"class": "BlockBottle",
+	"class": "datedliquor:CorkedContainer",
 	"variantgroups": [
 		{
 			"code": "material",

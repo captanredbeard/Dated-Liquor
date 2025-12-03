@@ -1,5 +1,6 @@
 {
 	"code": "growler",
+	"class": "datedliquor:CorkedContainer",
 	"variantgroups": [
 		{
 			"code": "material",
@@ -14,7 +15,6 @@
 			"states": [ "fired", "corked" ]
 		}
 	],
-	"class": "BlockBottle",
 	"creativeinventory": {
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
