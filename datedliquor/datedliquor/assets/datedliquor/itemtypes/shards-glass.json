@@ -1,0 +1,22 @@
+{
+  "code": "shards",
+  "class": "datedliquor.ItemShards",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "glass" ]
+    },
+    {
+      "code": "color",
+      "states": [ "green", "blue", "brown", "pink", "plain", "quartz", "red", "smoky", "vintage", "violet", "yellow" ]
+    }
+  ],
+  "creativeinventory": {
+    "general": [ "*" ],
+    "datedliqour": [ "*" ]
+  },
+  "shape": { "base": "item/shards" },
+  "textures": {
+    "all": { "base": "game:block/glass/{color}" }
+  }
+}

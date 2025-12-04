@@ -1,0 +1,33 @@
+{
+  "code": "shards",
+  "class": "datedliquor.ItemShards",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "clay" ]
+    },
+    {
+      "code": "color",
+      "states": [ "blue", "fire", "black", "brown", "cream", "gray", "orange", "red", "tan" ]
+    }
+  ],
+  "creativeinventory": {
+    "general": [ "*" ],
+    "datedliqour": [ "*" ]
+  },
+  "shape": { "base": "item/shards" },
+  "textures": {
+    "all": { "base": "game:block/clay/hardened/{color}" }
+  },
+  "attributes": {
+    "handbook": {
+      "groupBy": [ "shards-clay-*-{type}" ],
+      "extraSections": [
+        {
+          "title": "datedliqour:block-handbooktitle-shards",
+          "text": "datedliqour:block-handbooktext-shards"
+        }
+      ]
+    }
+  }
+}
