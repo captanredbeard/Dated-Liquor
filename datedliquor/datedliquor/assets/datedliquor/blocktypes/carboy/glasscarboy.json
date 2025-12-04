@@ -1,7 +1,7 @@
 {
 	"enabled": false,
 	"code": "carboy",
-	"class": "datedliquor:CorkedContainer",
+	"class": "datedliquor.BlockLiquidContainerCorkable",
 	"variantgroups": [
 		{
 			"code": "material",
@@ -47,7 +47,7 @@
 			"liquidContainerProps": {
 				"capacityLitres": 9,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/carboyglass-corked",
+				"emptyShapeLoc": "block/glass/carboy-corked",
 				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
 				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/carboy/liquidcontents",
 				"liquidMaxYTranslate": 0.05
@@ -62,7 +62,7 @@
 			"liquidContainerProps": {
 				"capacityLitres": 9,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/carboyglass-opened",
+				"emptyShapeLoc": "block/glass/carboy-opened",
 				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
 				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
 				"liquidMaxYTranslate": 0.05
@@ -94,8 +94,8 @@
 	"maxstacksize": 16,
 	"blockmaterial": "Glass",
 	"shapeByType": {
-		"*-corked": { "base": "block/glass/carboyglass-corked" },
-		"*": { "base": "block/glass/carboyglass-opened" }
+		"*-corked": { "base": "block/glass/carboy-corked" },
+		"*": { "base": "block/glass/carboy-opened" }
 	},
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },

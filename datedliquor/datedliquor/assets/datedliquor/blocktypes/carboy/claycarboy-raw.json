@@ -1,6 +1,5 @@
 {
 	"code": "carboy",
-	"class": "datedliquor:CorkedContainer",
 	"behaviors": [
 		{
 			"name": "GroundStorable",

@@ -1,14 +1,14 @@
 {
 	"code": "winebottle",
-	"class": "datedliquor:CorkedContainer",
+	"class": "datedliquor.BlockThrowableBottle",
 	"variantgroups": [
 		{
 			"code": "material",
-			"states": [ "glass" ]
+			"states": [ "clay" ]
 		},
 		{
 			"code": "color",
-			"states": [ "green", "blue", "brown", "pink", "plain", "quartz", "red", "smoky", "vintage", "violet", "yellow" ]
+			"states": [ "blue", "fire", "black", "brown", "cream", "gray", "orange", "red", "tan" ]
 		},
 		{
 			"code": "type",
@@ -19,18 +19,29 @@
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
 	},
+	"textures": {
+		"orange": { "base": "game:block/clay/hardened/{color}" },
+		"map": { "base": "game:item/utility/map" }
+	},
 	"attributes": {
+		"scrollrackable": true,
 		"shelvable": true,
 		"handbook": {
-			"groupBy": [ "winebottle-glass-*-{type}" ],
+			"groupBy": [ "winebottle-clay-*-{type}" ],
 			"extraSections": [
 				{
-					"title": "block-handbooktitle-bottle",
-					"text": "block-handbooktext-bottle"
+					"title": "aculinaryartillery:block-handbooktitle-bottle",
+					"text": "aculinaryartillery:block-handbooktext-bottle"
 				}
 			]
 		},
-		"scrollrackable": true,
+		"onBottlerackTransform": {
+			"translation": {
+				"x": 0,
+				"y": -0.07,
+				"z": 0
+			}
+		},
 		"onscrollrackTransform": {
 			"translation": {
 				"x": -1,
@@ -52,15 +63,7 @@
 		"minFill": 0.21,
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
-		"maxFillSideways": 9.3,
-		"isClear": true,
-		"onBottlerackTransform": {
-			"translation": {
-				"x": 0,
-				"y": -0.07,
-				"z": 0
-			}
-		}
+		"maxFillSideways": 9.3
 	},
 	"attributesByType": {
 		"*-corked": {
@@ -70,26 +73,26 @@
 			"bottlerackable": true,
 			"perishRate": 0.1,
 			"liquidContainerProps": {
-				"capacityLitres": 1,
+				"capacityLitres": 2,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/glass/winebottleglass-corked",
-				"opaqueContentShapeLoc": "shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "shapes/block/bottle/liquidcontents",
+				"emptyShapeLoc": "shapes/block/clay/winebottle-corked",
+				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/liquidcontents",
 				"liquidMaxYTranslate": 0.05
 			}
 		},
 		"*-fired": {
 			"canDrinkFrom": true,
 			"isTopOpened": true,
-			"bottlerackable": true,
 			"allowHeldLiquidTransfer": true,
+			"bottlerackable": true,
 			"perishRate": 1,
 			"liquidContainerProps": {
-				"capacityLitres": 1,
+				"capacityLitres": 2,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/glass/winebottleglass-opened",
-				"opaqueContentShapeLoc": "shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "shapes/block/bottle/contents",
+				"emptyShapeLoc": "shapes/block/clay/winebottle-opened",
+				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
 				"liquidMaxYTranslate": 0.05
 			}
 		}
@@ -117,17 +120,17 @@
 		}
 	],
 	"maxstacksize": 12,
-	"blockmaterial": "Glass",
+	"blockmaterial": "Ceramic",
 	"shapeByType": {
-		"*-corked": { "base": "block/glass/winebottleglass-corked" },
-		"*": { "base": "block/glass/winebottleglass-opened" }
+		"*-corked": { "base": "block/clay/winebottle-corked" },
+		"*": { "base": "block/clay/winebottle-opened" }
 	},
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },
 	"emitsideao": { "all": false },
 	"sidesolid": { "all": false },
-	"renderpass": "transparent",
+	"renderpass": "opaque",
 	"collisionbox": {
 		"x1": 0.4,
 		"y1": 0,
@@ -143,10 +146,6 @@
 		"x2": 0.65,
 		"y2": 0.375,
 		"z2": 0.65
-	},
-	"textures": {
-		"glass": { "base": "aculinaryartillery:block/bottle/{color}" },
-		"map": { "base": "game:item/utility/map" }
 	},
 	"resistance": 2,
 	"guiTransform": {
