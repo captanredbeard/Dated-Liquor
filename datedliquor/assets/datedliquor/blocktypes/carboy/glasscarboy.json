@@ -1,7 +1,7 @@
 {
 	"enabled": false,
 	"code": "carboy",
-	"class": "datedliquor.BlockLiquidContainerCorkable",
+	"class": "datedliquor.BlockDatedLiquorContainer",
 	"variantgroups": [
 		{
 			"code": "material",
@@ -127,15 +127,15 @@
 	"guiTransform": {
 		"rotation": {
 			"x": -22.6,
-			"y": -125,
+			"y": -25,
 			"z": 0
 		},
 		"origin": {
 			"x": 0.5,
-			"y": 0.44,
+			"y": 0.46,
 			"z": 0.5
 		},
-		"scale": 2.45
+		"scale": 1.42
 	},
 	"groundTransform": {
 		"scale": 5

@@ -1,6 +1,6 @@
 {
 	"code": "carboy",
-	"class": "datedliquor.BlockLiquidContainerCorkable",
+	"class": "datedliquor.BlockDatedLiquorContainer",
 	"variantgroups": [
 		{
 			"code": "material",
@@ -103,5 +103,31 @@
 		"hit": "game:block/ceramichit",
 		"place": "game:block/ceramicplace"
 	},
-	"heldTpIdleAnimation": "holdunderarm"
+	"heldTpIdleAnimation": "holdunderarm",
+	"tpHandTransform": {
+		"translation": {
+			"x": -1,
+			"y": -0.5,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": 25,
+			"y": -20,
+			"z": -99
+		},
+		"scale": 0.56
+	},
+	"guiTransform": {
+		"rotation": {
+			"x": -22.6,
+			"y": -25,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.46,
+			"z": 0.5
+		},
+		"scale": 1.42
+	}
 }
