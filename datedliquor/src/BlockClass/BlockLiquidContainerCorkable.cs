@@ -268,7 +268,7 @@ namespace datedliquor.src.BlockClass
             }
 
             Vintagestory.API.Datastructures.JsonObject attributes = activeHotbarSlot.Itemstack.Collectible.Attributes;
-            if (attributes != null && attributes.)
+            if (attributes != null && attributes.Exists)
             {
                 bool flag = false;
                 
@@ -394,10 +394,10 @@ namespace datedliquor.src.BlockClass
             IPlayer player = (byEntity as EntityPlayer)?.Player;
             if (Variant["type"] != "corked")
             {
-                Vintagestory.API.Datastructures.JsonObject itemAttributes = sourceslot.ItemAttributes;
+                Vintagestory.API.Datastructures.JsonObject itemAttributes = corkSlot.Itemstack.ItemAttributes;
                 if (itemAttributes != null && itemAttributes["canSealBottle"]?.AsBool() == true)
                 {
-                    ItemStack itemstack = new ItemStack(op.World.GetBlock(containerSlot.Itemstack.Collectible.CodeWithVariant("type", "corked")))
+                    ItemStack itemstack = new ItemStack(byEntity.World.GetBlock(containerSlot.Itemstack.Collectible.CodeWithVariant("type", "corked")))
                     {
                         Attributes = containerSlot.Itemstack.Attributes
                     };
@@ -407,16 +407,16 @@ namespace datedliquor.src.BlockClass
                     }
                     else
                     {
-                        sinkSlot.TakeOut(1);
+                        containerSlot.TakeOut(1);
                         if (player.InventoryManager.TryGiveItemstack(itemstack, slotNotifyEffect: true))
                         {
                             byEntity.World.SpawnItemEntity(itemstack, byEntity.Pos.AsBlockPos);
                         }
                     }
 
-                    op.MovedQuantity = 1;
-                    sourceSlot.TakeOut(1);
-                    sinkSlot.MarkDirty();
+                    
+                    corkSlot.TakeOut(1);
+                    containerSlot.MarkDirty();
                     return;
                 }
             }

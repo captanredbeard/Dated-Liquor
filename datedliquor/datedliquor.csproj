@@ -32,14 +32,22 @@
       <HintPath>$(VINTAGE_STORY)/Lib/0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VINTAGE_STORY)/VintagestoryLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="cairo-sharp">
       <HintPath>$(VINTAGE_STORY)/Lib/cairo-sharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="ACulinaryArtillery">
-		<HintPath>$(Project)/external/ACulinaryArtillery.dll</HintPath>
-		<Private>False</Private>
-	</Reference>
+    <Reference Include="Microsoft.Data.Sqlite">
+      <HintPath>$(VINTAGE_STORY)/Lib/Microsoft.Data.Sqlite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	  <Reference Include="ACulinaryArtillery">
+		  <HintPath>$(Project)/external/ACulinaryArtillery.dll</HintPath>
+		  <Private>False</Private>
+	  </Reference>
   </ItemGroup>
 
 <ItemGroup>
@@ -52,11 +60,6 @@
   <Content Include="modicon.png" Condition="Exists('modicon.png')">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
-</ItemGroup>
-
-<ItemGroup>
-  <Folder Include="assets\datedliquor\shapes\item\" />
-  <Folder Include="external\" />
 </ItemGroup>
 
 </Project>
