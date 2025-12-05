@@ -54,7 +54,7 @@
 			"liquidContainerProps": {
 				"capacityLitres": 9,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/growlerglass-corked",
+				"emptyShapeLoc": "block/glass/growler-corked",
 				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
 				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/liquidcontents",
 				"liquidMaxYTranslate": 0.05
@@ -69,7 +69,7 @@
 			"liquidContainerProps": {
 				"capacityLitres": 9,
 				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/growlerglass-opened",
+				"emptyShapeLoc": "block/glass/growler-opened",
 				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
 				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
 				"liquidMaxYTranslate": 0.05
