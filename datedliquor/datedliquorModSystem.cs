@@ -36,10 +36,10 @@ namespace datedliquor
         public override void Start(ICoreAPI api)
         {
             var modid = Mod.Info.ModID;
-            api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockLiquidContainerCorkable));
+            api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockCorkableLiquidContainer));
             api.RegisterBlockClass(modid + ".BlockDatedLiquorContainer", typeof(BlockDatedLiquorContainer));
 
-            api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockLiquidContainerCorkable));
+            api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockCorkableLiquidContainer));
 
 
 

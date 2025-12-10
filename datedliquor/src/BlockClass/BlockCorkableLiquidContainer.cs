@@ -17,7 +17,7 @@ using Vintagestory.GameContent;
 
 namespace datedliquor.src.BlockClass
 {
-    public class BlockLiquidContainerCorkable : BlockLiquidContainerTopOpened, IContainedInteractable
+    public class BlockCorkableLiquidContainer : BlockLiquidContainerTopOpened, IContainedInteractable
     {
         /*
          * 
