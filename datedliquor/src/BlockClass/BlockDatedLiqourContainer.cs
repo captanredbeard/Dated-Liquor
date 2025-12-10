@@ -1,4 +1,5 @@
-﻿using datedliquor.src.System;
+﻿using ACulinaryArtillery;
+using datedliquor.src.System;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using static HarmonyLib.Code;
 
 namespace datedliquor.src.BlockClass
 {
-    internal class BlockDatedLiquorContainer : BlockCorkableLiquidContainer
+    internal class BlockDatedLiquorContainer : BlockBottle
     {
         public CorkedContainableProps CorkedProps = new CorkedContainableProps();
 /*
