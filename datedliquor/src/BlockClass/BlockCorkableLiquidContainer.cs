@@ -302,7 +302,7 @@ namespace datedliquor.src.BlockClass
                 ItemSlot itemSlot = player.InventoryManager?.OffhandHotbarSlot;
                 if (itemSlot != null && (itemSlot.Empty || itemSlot.Itemstack.Collectible.FirstCodePart() == "cork"))
                 {
-                    uncorking = true;
+                    //uncorking = true;
                 }
                 else
                 {
@@ -316,7 +316,7 @@ namespace datedliquor.src.BlockClass
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
             IPlayer player = (byEntity as EntityPlayer)?.Player;
-            if (player != null && blockSel == null && entitySel == null && Variant["type"] == "corked" && uncorking && secondsUsed > 0.5)
+            if (player != null && blockSel == null && entitySel == null && Variant["type"] == "corked" && secondsUsed > 0.5)
             {
                 ItemSlot itemSlot = player.InventoryManager?.OffhandHotbarSlot;
                 if (itemSlot != null && (itemSlot.Empty || itemSlot.Itemstack.Collectible.FirstCodePart() == "cork"))
