@@ -1,11 +1,7 @@
 ﻿using Cairo;
 using datedliquor.src.EntityClass;
-using datedliquor.src.oldstuff;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -13,7 +9,7 @@ using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace datedliquor.src.BlockClass
 {
@@ -47,6 +43,7 @@ namespace datedliquor.src.BlockClass
 
         public override void OnUnloaded(ICoreAPI api)
         {
+            base.OnUnloaded(api);
             int num = 0;
             while (toolModes != null && num < toolModes.Length)
             {
@@ -56,14 +53,10 @@ namespace datedliquor.src.BlockClass
         }
 
         #region throwing
-        public override string GetHeldTpUseAnimation(ItemSlot activeHotbarSlot, Entity byEntity)
-        {
-            return null;
-        }
+
 
         public override string GetHeldTpHitAnimation(ItemSlot slot, Entity byEntity)
         {
-            
             return base.GetHeldTpHitAnimation(slot, byEntity);
         }
 
@@ -143,21 +136,23 @@ namespace datedliquor.src.BlockClass
                 modelTransform.Translation.Set(num / 4f, num / 2f, 0f);
                 modelTransform.Rotation.Set(0f, 0f, GameMath.Min(90f, secondsUsed * 360f / 1.5f));
             }
-
-            return true;
+            if (GetToolMode(slot, (byEntity as EntityPlayer).Player, blockSel) == 1)
+            {
+                return true;
+            }
+            return base.OnHeldInteractStep(secondsUsed, slot, byEntity, blockSel, entitySel);
         }
 
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
         {
+            byEntity.Attributes.SetInt("aiming", 0);
+            byEntity.StopAnimation("aim");
+            if (cancelReason != EnumItemUseCancelReason.ReleasedMouse)
+            {
+                byEntity.Attributes.SetInt("aimingCancel", 1);
+            }
             if (GetToolMode(slot, (byEntity as EntityPlayer).Player, blockSel) == 1)
             {
-                byEntity.Attributes.SetInt("aiming", 0);
-                byEntity.StopAnimation("aim");
-                if (cancelReason != EnumItemUseCancelReason.ReleasedMouse)
-                {
-                    byEntity.Attributes.SetInt("aimingCancel", 1);
-                }
-
                 return true;
             }
             return base.OnHeldInteractCancel(secondsUsed, slot, byEntity, blockSel, entitySel, cancelReason);
@@ -165,55 +160,56 @@ namespace datedliquor.src.BlockClass
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
-            if (GetToolMode(slot, (byEntity as EntityPlayer).Player, blockSel) == 1)
+            bool flag = false;
+            CollectibleBehavior[] collectibleBehaviors = CollectibleBehaviors;
+            foreach (CollectibleBehavior obj in collectibleBehaviors)
             {
-                bool flag = false;
-                CollectibleBehavior[] collectibleBehaviors = CollectibleBehaviors;
-                foreach (CollectibleBehavior obj in collectibleBehaviors)
+                EnumHandling handling = EnumHandling.PassThrough;
+                obj.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel, ref handling);
+                if (handling != EnumHandling.PassThrough)
                 {
-                    EnumHandling handling = EnumHandling.PassThrough;
-                    obj.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel, ref handling);
-                    if (handling != EnumHandling.PassThrough)
-                    {
-                        flag = true;
-                    }
-
-                    if (handling == EnumHandling.PreventSubsequent)
-                    {
-                        return;
-                    }
+                    flag = true;
                 }
 
-                if (flag || byEntity.Attributes.GetInt("aimingCancel") == 1)
+                if (handling == EnumHandling.PreventSubsequent)
                 {
                     return;
                 }
-
-                byEntity.Attributes.SetInt("aiming", 0);
-                byEntity.StopAnimation("aim");
-                if (!(secondsUsed < 0.35f))
-                {
-                    ItemStack projectileStack = slot.TakeOut(1);
-                    slot.MarkDirty();
-                    IPlayer dualCallByPlayer = null;
-                    if (byEntity is EntityPlayer)
-                    {
-                        dualCallByPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
-                    }
-
-                    byEntity.World.PlaySoundAt(new AssetLocation("sounds/player/throw"), byEntity, dualCallByPlayer, randomizePitch: false, 8f);
-
-                    EntityProperties entityType = byEntity.World.GetEntityType(this.Code);
-
-                    Entity entity = byEntity.World.ClassRegistry.CreateEntity(entityType);
-                    ((EntityThrownBottle)entity).FiredBy = byEntity;
-                    ((EntityThrownBottle)entity).Damage = damage;
-                    ((EntityThrownBottle)entity).ProjectileStack = projectileStack;
-                    EntityProjectile.SpawnThrownEntity(entity, byEntity, 0.75, 0.1, 0.2);
-                    byEntity.StartAnimation("throw");
-                }
             }
-            base.OnHeldInteractStop(secondsUsed,slot, byEntity,blockSel,entitySel);
+
+            if (flag || byEntity.Attributes.GetInt("aimingCancel") == 1)
+            {
+                return;
+            }
+
+            byEntity.Attributes.SetInt("aiming", 0);
+            byEntity.StopAnimation("aim");
+            if (!(secondsUsed < 0.35f))
+            {
+                ItemStack projectileStack = slot.TakeOut(1);
+                slot.MarkDirty();
+                IPlayer dualCallByPlayer = null;
+                if (byEntity is EntityPlayer)
+                {
+                    dualCallByPlayer = byEntity.World.PlayerByUid(((EntityPlayer)byEntity).PlayerUID);
+                }
+
+                byEntity.World.PlaySoundAt(new AssetLocation("sounds/player/throw"), byEntity, dualCallByPlayer, randomizePitch: false, 8f);
+
+                EntityProperties entityType = byEntity.World.GetEntityType(this.Code);
+
+                Entity entity = byEntity.World.ClassRegistry.CreateEntity(entityType);
+                ((EntityThrownBottle)entity).FiredBy = byEntity;
+                ((EntityThrownBottle)entity).Damage = damage;
+                ((EntityThrownBottle)entity).ProjectileStack = projectileStack;
+                EntityProjectile.SpawnThrownEntity(entity, byEntity, 0.75, 0.1, 0.2);
+                byEntity.StartAnimation("throw");
+            }
+
+            if (GetToolMode(slot, (byEntity as EntityPlayer).Player, blockSel) != 1)
+            {
+                base.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel);
+            }
         }
 
         public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
@@ -221,19 +217,24 @@ namespace datedliquor.src.BlockClass
             base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
             dsc.AppendLine(Lang.Get("{0} blunt damage when thrown", damage));
         }
+
         #endregion throwing
+
         public override SkillItem[] GetToolModes(ItemSlot slot, IClientPlayer forPlayer, BlockSelection blockSel)
         {
             return toolModes;
         }
+
         public override int GetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSel)
         {
             return slot.Itemstack.Attributes.GetInt("toolMode");
         }
+
         public override void SetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSel, int toolMode)
         {
             slot.Itemstack.Attributes.SetInt("toolMode", toolMode);
         }
+
         public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
         {
             return new WorldInteraction[1]
@@ -247,8 +248,8 @@ namespace datedliquor.src.BlockClass
             };
         }
 
-
         #region svg
+
         public static void Drawcreate1_svg(Context cr, int x, int y, float width, float height, double[] rgba)
         {
             Pattern pattern = null;

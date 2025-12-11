@@ -7,7 +7,7 @@
 				"code": "winebottle-clay-*-fired",
 				"name": "color",
 				"attributes": {
-					"isTopOpened": false
+					"corked": true
 				}
 			}
 		},
@@ -27,7 +27,7 @@
 				"code": "winebottle-glass-*-fired",
 				"name": "color",
 				"attributes": {
-					"isTopOpened": false
+					"corked": true
 				}
 			}
 		},

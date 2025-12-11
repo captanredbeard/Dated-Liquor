@@ -12,11 +12,10 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired"]
+			"states": [ "fired" ]
 		}
 	],
-	"shapeByType": {
-		"*-corked": { "base": "block/clay/carboy-corked" },
+	"shape": {
 		"*": { "base": "block/clay/carboy-opened" }
 	},
 	"textures": {
@@ -44,6 +43,7 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
+		"corked": false,
 		"corkedShapeLoc": "shapes/block/clay/carboy-corked"
 	},
 	"attributesByType": {
@@ -84,6 +84,7 @@
 		"datedliqour": [ "*" ]
 	},
 	"lightAbsorption": 0,
+	"liquidSelectable": 1,
 	"sideopaque": { "all": false },
 	"sideao": { "all": false },
 	"sidesolid": { "all": false },

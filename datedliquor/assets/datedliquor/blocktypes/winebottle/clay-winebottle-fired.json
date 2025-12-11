@@ -24,10 +24,7 @@
 		"map": { "base": "game:item/utility/map" }
 	},
 	"shape": {
-		"base": "block/clay/winebottle-opened",
-		"alternates": [
-			{ "base": "block/clay/winebottle-corked" }
-		]
+		"base": "block/clay/winebottle-opened"
 	},
 	"attributes": {
 		"scrollrackable": true,
@@ -70,24 +67,10 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
+		"corked": false,
 		"corkedShapeLoc": "shapes/block/clay/winebottle-corked"
 	},
 	"attributesByType": {
-		"*-corked": {
-			"canDrinkFrom": false,
-			"isTopOpened": false,
-			"allowHeldLiquidTransfer": false,
-			"bottlerackable": true,
-			"perishRate": 0.1,
-			"liquidContainerProps": {
-				"capacityLitres": 2,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/clay/winebottle-corked",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/liquidcontents",
-				"liquidMaxYTranslate": 0.05
-			}
-		},
 		"*-fired": {
 			"canDrinkFrom": true,
 			"isTopOpened": true,
@@ -128,6 +111,7 @@
 	],
 	"maxstacksize": 12,
 	"blockmaterial": "Ceramic",
+	"liquidSelectable": 1,
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },

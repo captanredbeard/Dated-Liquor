@@ -5,10 +5,7 @@
 			"G": {
 				"type": "block",
 				"code": "carboy-clay-*-fired",
-				"name": "color",
-				"attributes": {
-					"isTopOpened": false
-				}
+				"name": "color"
 			}
 		},
 		"width": 1,
@@ -25,10 +22,7 @@
 			"G": {
 				"type": "block",
 				"code": "carboy-glass-*-fired",
-				"name": "color",
-				"attributes": {
-					"isTopOpened": false
-				}
+				"name": "color"
 			}
 		},
 		"width": 1,

@@ -34,12 +34,7 @@ add the ability to cork/uncork a bottle while it's placed in the world
        
         public override void AddExtraHeldItemInfoPostMaterial(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world)
         {
-            base.AddExtraHeldItemInfoPostMaterial(inSlot, dsc, world);
-            if (IsTopOpened)
-            {
-                dsc.AppendLine("AddExtraHeldItemInfoPostMaterial Post Base Method");
-            }
-            
+            base.AddExtraHeldItemInfoPostMaterial(inSlot, dsc, world); 
         }        
     }
 }

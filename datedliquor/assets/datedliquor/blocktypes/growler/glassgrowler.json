@@ -20,10 +20,7 @@
 		"datedliqour": [ "*" ]
 	},
 	"shape": {
-		"base": "block/glass/growler-opened",
-		"alternates": [
-			{ "base": "block/glass/growler-corked" }
-		]
+		"base": "block/glass/growler-opened"
 	},
 	"textures": {
 		"glass": { "base": "game:block/glass/{color}" },
@@ -45,6 +42,7 @@
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
 		"isClear": true,
+		"corked": false,
 		"corkedShapeLoc": "block/glass/growler-corked"
 	},
 	"attributesByType": {
@@ -89,6 +87,7 @@
 	"maxstacksize": 8,
 	"blockmaterial": "Glass",
 	"lightAbsorption": 0,
+	"liquidSelectable": 1,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },
 	"emitsideao": { "all": false },

@@ -17,7 +17,7 @@ using Vintagestory.GameContent;
 
 namespace datedliquor.src.BlockClass
 {
-    public class BlockCorkableLiquidContainer : BlockLiquidContainerTopOpened //, IContainedInteractable
+    public class BlockCorkableLiquidContainer : BlockLiquidContainerTopOpened//, IContainedInteractable
     {
         /*
          * 
@@ -35,6 +35,12 @@ namespace datedliquor.src.BlockClass
          * 
         */
 
+        private MeshData origcontainermesh;
+
+        private Shape contentShape;
+
+        private Shape liquidContentShape;
+
         private LiquidTopOpenContainerProps props = new();
         protected virtual string MeshRefsCacheKey => Code.ToShortString() + "meshRefs";
         protected virtual AssetLocation EmptyShapeLoc => props.EmptyShapeLoc ?? Shape.Base;
@@ -49,6 +55,8 @@ namespace datedliquor.src.BlockClass
         public override bool CanDrinkFrom => Attributes["canDrinkFrom"].AsBool(defaultValue: true);
         public override bool IsTopOpened => Attributes["isTopOpened"].AsBool(defaultValue: true);
         public override bool AllowHeldLiquidTransfer => Attributes["allowHeldLiquidTransfer"].AsBool(defaultValue: true);
+
+        bool corked => Attributes["corked"].AsBool();
 
         protected virtual bool IsClear => Attributes["isClear"].AsBool();
 
@@ -69,7 +77,7 @@ namespace datedliquor.src.BlockClass
 
         public float SatMult => Attributes?["satMult"].AsFloat(1f) ?? 1f;
 
-        ItemStack corkStack;
+        private ItemStack corkStack;
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
@@ -190,7 +198,7 @@ namespace datedliquor.src.BlockClass
         {
             IAsset asset = capi?.Assets.TryGet(emptyShapeLoc.CopyWithPathPrefixAndAppendixOnce("shapes/", ".json"));
 
-            if (corkStack != null)
+            if (corkStack != null ||corked)
             {
                 asset = capi?.Assets.TryGet(CorkedShapeLoc.CopyWithPathPrefixAndAppendixOnce("shapes/", ".json"));
             }
@@ -204,7 +212,7 @@ namespace datedliquor.src.BlockClass
             capi.Tesselator.TesselateShape(this, asset.ToObject<Shape>(), out var modeldata, new Vec3f(Shape.rotateX, Shape.rotateY, Shape.rotateZ));
             if (contentStack != null && (IsClear || IsTopOpened))
             {
-                WaterTightContainableProps containableProps = BlockLiquidContainerBase.GetContainableProps(contentStack);
+                WaterTightContainableProps containableProps = BlockLiquidContainerTopOpened.GetContainableProps(contentStack);
                 if (containableProps != null)
                 {
                     float fullness = (float)contentStack.StackSize / containableProps.ItemsPerLitre;
@@ -267,6 +275,7 @@ namespace datedliquor.src.BlockClass
         #region interaction
         //I was attempting to add OnContained Interacts to allow for corking/uncorking bottles inside of ground storages, and I might be back to reimplement it.
 
+        /*
         public virtual bool OnContainedInteractStart(BlockEntityContainer be, ItemSlot slot, IPlayer byPlayer, BlockSelection blockSel)
         {
             ItemSlot activeHotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
@@ -301,7 +310,7 @@ namespace datedliquor.src.BlockClass
         {
 
         }
-
+        */
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
             IPlayer player = (byEntity as EntityPlayer)?.Player;
@@ -377,14 +386,22 @@ namespace datedliquor.src.BlockClass
             {
                 bool flag = false;
                 bool flag2 = false;
+                
                 for (int i = 0; i < gridRecipe.resolvedIngredients.Length; i++)
                 {
                     ItemStack resolvedItemstack = gridRecipe.resolvedIngredients[i].ResolvedItemstack;
                     if (resolvedItemstack?.Collectible is BlockCorkableLiquidContainer)
                     {
-                        flag2 = resolvedItemstack.Attributes.GetBool("isTopOpened");
+                        // can never seem to return the corked attribute as true when the bottle is corked
+                        flag2 = (resolvedItemstack.Collectible as BlockCorkableLiquidContainer).Attributes["corked"].AsBool();
+                        flag2 = resolvedItemstack.ItemAttributes["corked"].AsBool();
                     }
-                    else if (resolvedItemstack != null && resolvedItemstack.ItemAttributes["canSealBottle"].AsBool())
+                    
+                }
+                for (int i = 0; i < gridRecipe.resolvedIngredients.Length; i++)
+                {
+                    ItemStack resolvedItemstack = gridRecipe.resolvedIngredients[i].ResolvedItemstack;
+                    if (resolvedItemstack != null && resolvedItemstack.ItemAttributes["canSealBottle"].AsBool() && !flag2)
                     {
                         flag = true;
                     }
@@ -427,7 +444,8 @@ namespace datedliquor.src.BlockClass
                         }
                     }
                     outputSlot.Itemstack.Attributes.SetItemstack("corkStack", bottleCorkStack);
-                    outputSlot.Itemstack.Attributes.SetInt("renderVariant", flag ? 0 : 1);
+                    outputSlot.Itemstack.Attributes.SetBool("corked", !flag);
+                    outputSlot.Itemstack.Attributes.SetInt("renderVariant", flag?0:1);
                     outputSlot.Itemstack.Attributes.SetBool("canDrinkFrom", value: flag);
                     outputSlot.Itemstack.Attributes.SetBool("isTopOpened", value: flag);
                     outputSlot.Itemstack.Attributes.SetBool("allowHeldLiquidTransfer", value: flag);
@@ -468,8 +486,9 @@ namespace datedliquor.src.BlockClass
 
                     corkStack = sourceSlot.Itemstack.GetEmptyClone();
                     corkStack.StackSize = 1;
-                    
-                    sinkSlot.Itemstack.Attributes.SetInt("renderVariant", 1);
+
+                    //sinkSlot.Itemstack.Attributes.SetInt("renderVariant", 1);
+                    sinkSlot.Itemstack.Attributes.SetBool("Corked", value: true);
                     sinkSlot.Itemstack.Attributes.SetBool("canDrinkFrom", value: false);
                     sinkSlot.Itemstack.Attributes.SetBool("isTopOpened", value: false);
                     sinkSlot.Itemstack.Attributes.SetBool("allowHeldLiquidTransfer", value: false);
@@ -664,7 +683,6 @@ namespace datedliquor.src.BlockClass
                 dsc.AppendLine();
                 dsc.Append(matching);
             }
-
             EntityPlayer entityPlayer = (world as IClientWorldAccessor)?.Player.Entity;
             float spoilState = AppendPerishableInfoText(inSlot2, new StringBuilder(), world);
             FoodNutritionProperties[] expandedContentNutritionProperties = ItemExpandedRawFood.GetExpandedContentNutritionProperties(world, inSlot2, content, entityPlayer);
@@ -691,6 +709,15 @@ namespace datedliquor.src.BlockClass
                     dsc.AppendLine(Lang.Get("efrecipes:- {0} {1} sat", Math.Round((double)(foodNutritionProperties.Satiety * num2) * (num / 10.0)), foodNutritionProperties.FoodCategory.ToString()));
                 }
             }
+        }
+
+        public override void AddExtraHeldItemInfoPostMaterial(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world)
+        {
+            base.AddExtraHeldItemInfoPostMaterial(inSlot, dsc, world);
+            if (corked)
+            {
+                dsc.AppendLine("<font color=\"lightgreen\">Corked.</font>");
+            };
         }
 
         public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)

@@ -20,10 +20,7 @@
 		"datedliqour": [ "*" ]
 	},
 	"shape": {
-		"base": "block/clay/growler-opened",
-		"alternates": [
-			{ "base": "block/clay/growler-corked" }
-		]
+		"base": "block/clay/growler-opened"
 	},
 	"attributes": {
 		"shelvable": true,
@@ -40,6 +37,7 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
+		"corked": false,
 		"corkedShapeLoc": "shapes/block/clay/growler-corked"
 	},
 	"attributesByType": {
@@ -49,7 +47,7 @@
 			"allowHeldLiquidTransfer": true,
 			"perishRate": 1,
 			"liquidContainerProps": {
-				"capacityLitres": 12,
+				"capacityLitres": 9,
 				"transferSizeLitres": 0.1,
 				"emptyShapeLoc": "shapes/block/clay/growler-opened",
 				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
@@ -83,6 +81,7 @@
 	"maxstacksize": 8,
 	"blockmaterial": "Ceramic",
 	"lightAbsorption": 0,
+	"liquidSelectable": 1,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },
 	"emitsideao": { "all": false },
