@@ -12,16 +12,18 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired" ]
 		}
 	],
 	"creativeinventory": {
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
 	},
-	"shapeByType": {
-		"*-corked": { "base": "block/glass/growler-corked" },
-		"*": { "base": "block/glass/growler-opened" }
+	"shape": {
+		"base": "block/glass/growler-opened",
+		"alternates": [
+			{ "base": "block/glass/growler-corked" }
+		]
 	},
 	"textures": {
 		"glass": { "base": "game:block/glass/{color}" },
@@ -42,24 +44,10 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
-		"isClear": true
+		"isClear": true,
+		"corkedShapeLoc": "block/glass/growler-corked"
 	},
 	"attributesByType": {
-		"*-corked": {
-			"canDrinkFrom": false,
-			"isTopOpened": false,
-			"allowHeldLiquidTransfer": false,
-			"growlerrackable": true,
-			"perishRate": 0.1,
-			"liquidContainerProps": {
-				"capacityLitres": 9,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/growler-corked",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/liquidcontents",
-				"liquidMaxYTranslate": 0.05
-			}
-		},
 		"*-fired": {
 			"canDrinkFrom": true,
 			"isTopOpened": true,

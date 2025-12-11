@@ -13,7 +13,7 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired"]
 		}
 	],
 	"allowedVariants": [

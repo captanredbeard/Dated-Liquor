@@ -8,7 +8,7 @@
     },
     {
       "code": "type",
-      "states": [ "fired", "corked" ]
+      "states": [ "fired" ]
     }
   ],
   "creativeinventory": {
@@ -71,10 +71,10 @@
       "scale": 0.6
     },
     "shelvable": true,
-
     "handbook": {
       "groupBy": [ "jugglass-*-{state}" ]
-    }
+    },
+    "corkedShapeLoc": "block/glass/jug-corked"
   },
   "attributesByType": {
     "*-corked": {

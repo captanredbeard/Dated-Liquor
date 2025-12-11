@@ -12,7 +12,7 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired" ]
 		}
 	],
 	"creativeinventory": {
@@ -22,6 +22,12 @@
 	"textures": {
 		"orange": { "base": "game:block/clay/hardened/{color}" },
 		"map": { "base": "game:item/utility/map" }
+	},
+	"shape": {
+		"base": "block/clay/winebottle-opened",
+		"alternates": [
+			{ "base": "block/clay/winebottle-corked" }
+		]
 	},
 	"attributes": {
 		"scrollrackable": true,
@@ -63,7 +69,8 @@
 		"minFill": 0.21,
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
-		"maxFillSideways": 9.3
+		"maxFillSideways": 9.3,
+		"corkedShapeLoc": "shapes/block/clay/winebottle-corked"
 	},
 	"attributesByType": {
 		"*-corked": {
@@ -121,10 +128,6 @@
 	],
 	"maxstacksize": 12,
 	"blockmaterial": "Ceramic",
-	"shapeByType": {
-		"*-corked": { "base": "block/clay/winebottle-corked" },
-		"*": { "base": "block/clay/winebottle-opened" }
-	},
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },

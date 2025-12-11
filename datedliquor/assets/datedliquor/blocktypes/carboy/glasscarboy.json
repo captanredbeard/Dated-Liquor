@@ -13,7 +13,7 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired" ]
 		}
 	],
 	"creativeinventory": {
@@ -35,24 +35,10 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
-		"isClear": true
+		"isClear": true,
+		"corkedShapeLoc": "block/glass/carboy-corked"
 	},
 	"attributesByType": {
-		"*-corked": {
-			"canDrinkFrom": false,
-			"isTopOpened": false,
-			"allowHeldLiquidTransfer": false,
-			"carboyrackable": true,
-			"perishRate": 0.1,
-			"liquidContainerProps": {
-				"capacityLitres": 9,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/carboy-corked",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/carboy/liquidcontents",
-				"liquidMaxYTranslate": 0.05
-			}
-		},
 		"*-fired": {
 			"canDrinkFrom": true,
 			"isTopOpened": true,

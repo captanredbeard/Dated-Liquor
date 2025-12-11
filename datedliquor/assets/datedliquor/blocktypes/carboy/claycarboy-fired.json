@@ -12,7 +12,7 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired"]
 		}
 	],
 	"shapeByType": {
@@ -43,7 +43,8 @@
 		"minFill": 0.21,
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
-		"maxFillSideways": 9.3
+		"maxFillSideways": 9.3,
+		"corkedShapeLoc": "shapes/block/clay/carboy-corked"
 	},
 	"attributesByType": {
 		"*-corked": {

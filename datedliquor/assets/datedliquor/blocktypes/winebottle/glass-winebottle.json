@@ -12,12 +12,18 @@
 		},
 		{
 			"code": "type",
-			"states": [ "fired", "corked" ]
+			"states": [ "fired" ]
 		}
 	],
 	"creativeinventory": {
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
+	},
+	"shape": {
+		"base": "block/glass/winebottle-opened",
+		"alternates": [
+			{ "base": "block/glass/winebottle-corked" }
+		]
 	},
 	"attributes": {
 		"shelvable": true,
@@ -60,24 +66,10 @@
 				"y": -0.07,
 				"z": 0
 			}
-		}
+		},
+		"corkedShapeLoc": "shapes/block/glass/winebottle-corked"
 	},
 	"attributesByType": {
-		"*-corked": {
-			"canDrinkFrom": false,
-			"isTopOpened": false,
-			"allowHeldLiquidTransfer": false,
-			"bottlerackable": true,
-			"perishRate": 0.1,
-			"liquidContainerProps": {
-				"capacityLitres": 2,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/glass/winebottle-corked",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/liquidcontents",
-				"liquidMaxYTranslate": 0.1
-			}
-		},
 		"*-fired": {
 			"canDrinkFrom": true,
 			"isTopOpened": true,
@@ -118,10 +110,6 @@
 	],
 	"maxstacksize": 12,
 	"blockmaterial": "Glass",
-	"shapeByType": {
-		"*-corked": { "base": "block/glass/winebottle-corked" },
-		"*": { "base": "block/glass/winebottle-opened" }
-	},
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },
