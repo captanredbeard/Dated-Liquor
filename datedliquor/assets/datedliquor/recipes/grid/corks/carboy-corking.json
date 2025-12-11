@@ -1,0 +1,44 @@
+[
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "carboy-clay-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedclaycarboy",
+		"output": {
+			"type": "block",
+			"code": "carboy-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "carboy-glass-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedglasscarboy",
+		"output": {
+			"type": "block",
+			"code": "carboy-glass-{color}-fired"
+		}
+	}
+]

@@ -1,0 +1,41 @@
+[
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "winebottle-clay-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"name": "uncorkedclaywinebottle",
+		"output": {
+			"type": "block",
+			"code": "winebottle-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "winebottle-glass-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"output": {
+			"type": "block",
+			"code": "winebottle-glass-{color}-fired"
+		}
+	}
+]

@@ -1,0 +1,44 @@
+[
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "winebottle-clay-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedclaywinebottle",
+		"output": {
+			"type": "block",
+			"code": "winebottle-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "winebottle-glass-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedglasswinebottle",
+		"output": {
+			"type": "block",
+			"code": "winebottle-glass-{color}-fired"
+		}
+	}
+]

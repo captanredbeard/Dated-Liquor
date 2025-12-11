@@ -1,0 +1,41 @@
+[
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "game:jug-clay-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"name": "uncorkedclaygame:jug",
+		"output": {
+			"type": "block",
+			"code": "game:jug-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "game:jug-glass-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"output": {
+			"type": "block",
+			"code": "game:jug-glass-{color}-fired"
+		}
+	}
+]

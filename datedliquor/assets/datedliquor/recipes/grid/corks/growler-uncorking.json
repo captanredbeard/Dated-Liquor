@@ -1,0 +1,41 @@
+[
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "growler-clay-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"name": "uncorkedclaygrowler",
+		"output": {
+			"type": "block",
+			"code": "growler-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "G",
+		"ingredients": {
+			"G": {
+				"type": "block",
+				"code": "growler-glass-*-fired",
+				"name": "color",
+				"attributes": {
+					"isTopOpened": false
+				}
+			}
+		},
+		"width": 1,
+		"height": 1,
+		"output": {
+			"type": "block",
+			"code": "growler-glass-{color}-fired"
+		}
+	}
+]

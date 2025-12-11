@@ -1,0 +1,44 @@
+[
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "growler-clay-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedclaygrowler",
+		"output": {
+			"type": "block",
+			"code": "growler-clay-{color}-fired"
+		}
+	},
+	{
+		"ingredientPattern": "C,G",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "aculinaryartillery:cork-generic"
+			},
+			"G": {
+				"type": "block",
+				"code": "growler-glass-*-fired",
+				"name": "color"
+			}
+		},
+		"width": 1,
+		"height": 2,
+		"name": "corkedglassgrowler",
+		"output": {
+			"type": "block",
+			"code": "growler-glass-{color}-fired"
+		}
+	}
+]
