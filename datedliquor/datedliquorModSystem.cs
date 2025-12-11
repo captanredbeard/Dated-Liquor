@@ -39,10 +39,6 @@ namespace datedliquor
             api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockCorkableLiquidContainer));
             api.RegisterBlockClass(modid + ".BlockDatedLiquorContainer", typeof(BlockDatedLiquorContainer));
 
-            api.RegisterBlockClass(modid + ".BlockLiquidContainerCorkable", typeof(BlockCorkableLiquidContainer));
-
-
-
             api.RegisterBlockClass(modid + ".BlockThrowableBottle", typeof(BlockThrowableBottle));
             api.RegisterEntity(modid + ".EntityThrownBottle", typeof(EntityThrownBottle));
             api.RegisterItemClass(modid + ".ItemShards", typeof(ItemShards));
