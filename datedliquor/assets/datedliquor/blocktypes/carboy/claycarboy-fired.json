@@ -43,39 +43,16 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
-		"corked": false,
-		"corkedShapeLoc": "shapes/block/clay/carboy-corked"
-	},
-	"attributesByType": {
-		"*-corked": {
-			"canDrinkFrom": false,
-			"isTopOpened": false,
-			"allowHeldLiquidTransfer": false,
-			"bottlerackable": true,
-			"perishRate": 0.1,
-			"liquidContainerProps": {
-				"capacityLitres": 12,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/clay/carboy-corked",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/liquidcontents",
-				"liquidMaxYTranslate": 0.05
-			}
-		},
-		"*-fired": {
-			"canDrinkFrom": true,
-			"isTopOpened": true,
-			"allowHeldLiquidTransfer": true,
-			"bottlerackable": true,
-			"perishRate": 12,
-			"liquidContainerProps": {
-				"capacityLitres": 1,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/clay/carboy-opened",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidMaxYTranslate": 0.05
-			}
+		"corkedShapeLoc": "shapes/block/clay/carboy-corked",
+		"bottlerackable": true,
+		"perishRate": 12,
+		"liquidContainerProps": {
+			"capacityLitres": 1,
+			"transferSizeLitres": 0.1,
+			"emptyShapeLoc": "shapes/block/clay/carboy-opened",
+			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"liquidMaxYTranslate": 0.05
 		}
 	},
 	"blockmaterial": "Ceramic",

@@ -1,6 +1,6 @@
 {
   "code": "jugglass",
-  "class": "datedliquor.BlockLiquidContainerCorkable",
+  "class": "datedliquor.BlockDatedLiquorContainer",
   "variantgroups": [
     {
       "code": "color",
@@ -74,36 +74,15 @@
     "handbook": {
       "groupBy": [ "jugglass-*-{state}" ]
     },
-    "corkedShapeLoc": "block/glass/jug-corked"
-  },
-  "attributesByType": {
-    "*-corked": {
-      "canDrinkFrom": false,
-      "isTopOpened": false,
-      "allowHeldLiquidTransfer": false,
-      "perishRate": 0.1,
-      "liquidContainerProps": {
-        "capacityLitres": 3,
-        "transferSizeLitres": 0.1,
-        "emptyShapeLoc": "block/glass/jug-corked",
-        "opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-        "liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/liquidcontents",
-        "liquidMaxYTranslate": 0.05
-      }
-    },
-    "*-fired": {
-      "canDrinkFrom": true,
-      "isTopOpened": true,
-      "allowHeldLiquidTransfer": true,
-      "perishRate": 1,
-      "liquidContainerProps": {
-        "capacityLitres": 3,
-        "transferSizeLitres": 0.1,
-        "emptyShapeLoc": "block/glass/jug-opened",
-        "opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-        "liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-        "liquidMaxYTranslate": 0.05
-      }
+    "corkedShapeLoc": "block/glass/jug-corked",
+    "perishRate": 1,
+    "liquidContainerProps": {
+      "capacityLitres": 3,
+      "transferSizeLitres": 0.1,
+      "emptyShapeLoc": "block/glass/jug-opened",
+      "opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+      "liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+      "liquidMaxYTranslate": 0.05
     }
   },
   "maxstacksize": 8,

@@ -42,24 +42,16 @@
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
 		"isClear": true,
-		"corked": false,
-		"corkedShapeLoc": "block/glass/growler-corked"
-	},
-	"attributesByType": {
-		"*-fired": {
-			"canDrinkFrom": true,
-			"isTopOpened": true,
-			"growlerrackable": true,
-			"allowHeldLiquidTransfer": true,
-			"perishRate": 1,
-			"liquidContainerProps": {
-				"capacityLitres": 9,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "block/glass/growler-opened",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
-				"liquidMaxYTranslate": 0.05
-			}
+		"corkedShapeLoc": "block/glass/growler-corked",
+		"growlerrackable": true,
+		"perishRate": 1,
+		"liquidContainerProps": {
+			"capacityLitres": 9,
+			"transferSizeLitres": 0.1,
+			"emptyShapeLoc": "block/glass/growler-opened",
+			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
+			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
+			"liquidMaxYTranslate": 0.05
 		}
 	},
 	"drawtype": "JSON",

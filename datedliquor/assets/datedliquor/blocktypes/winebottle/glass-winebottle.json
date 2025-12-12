@@ -57,7 +57,6 @@
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
 		"isClear": true,
-		"corked": false,
 		"onBottlerackTransform": {
 			"translation": {
 				"x": 0,
@@ -65,25 +64,19 @@
 				"z": 0
 			}
 		},
-		"corkedShapeLoc": "shapes/block/glass/winebottle-corked"
-	},
-	"attributesByType": {
-		"*-fired": {
-			"canDrinkFrom": true,
-			"isTopOpened": true,
-			"bottlerackable": true,
-			"allowHeldLiquidTransfer": true,
-			"perishRate": 1,
-			"liquidContainerProps": {
-				"capacityLitres": 2,
-				"transferSizeLitres": 0.1,
-				"emptyShapeLoc": "shapes/block/glass/winebottle-opened",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-				"liquidMaxYTranslate": 0.1
-			}
+		"corkedShapeLoc": "shapes/block/glass/winebottle-corked",
+		"bottlerackable": true,
+		"perishRate": 1,
+		"liquidContainerProps": {
+			"capacityLitres": 2,
+			"transferSizeLitres": 0.1,
+			"emptyShapeLoc": "shapes/block/glass/winebottle-opened",
+			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"liquidMaxYTranslate": 0.1
 		}
 	},
+	
 	"drawtype": "JSON",
 	"replaceable": 1,
 	"behaviors": [
