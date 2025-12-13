@@ -98,8 +98,12 @@ namespace datedliquor.src.BlockClass
             coreClientAPI.ObjectCache.Remove(meshRefsCacheKey);
         }
 
+        
+         //Genmesh needs to be fixed to use CorkedShapeLoc when corked, and EmptyShapeLoc when not corked
+         
+         //slicing of shapes needs to be fixed to allow for sideways rendering inside of scroll racks
+      
         #region display
-        //I eventually need to implement some system to allow for the neck of my winebottle to fill with fluid by making a mesh of the insides and then cutting it at the current horizontial fill level.
 
         public override byte[]? GetLightHsv(IBlockAccessor blockAccessor, BlockPos pos, ItemStack? stack = null)
         {
@@ -482,11 +486,7 @@ namespace datedliquor.src.BlockClass
                     outputSlot.Itemstack.Attributes.SetBool("allowHeldLiquidTransfer", value: flag);
                     OnCorkContainer(outputSlot, null);
 
-                    if (byRecipe.Ingredients.Count == 1)
-                    {
-                        
-                    }
-                    return;
+
                 }
             }
         }

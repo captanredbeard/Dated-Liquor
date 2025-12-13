@@ -1,16 +1,11 @@
 ﻿using ACulinaryArtillery;
 using datedliquor.src.System;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
-using Vintagestory.Client.NoObf;
-using Vintagestory.GameContent;
-using static HarmonyLib.Code;
+
 
 namespace datedliquor.src.BlockClass
 {
@@ -34,8 +29,12 @@ namespace datedliquor.src.BlockClass
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
+
             DateProps = Attributes["DatedLiqourProps"].AsObject(DateProps, Code.Domain);
         }
+
+
+        
 
         public override void AddExtraHeldItemInfoPostMaterial(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world)
         {
@@ -92,16 +91,27 @@ namespace datedliquor.src.BlockClass
             }
 
         }
-        
 
 
+        //TryMergeStacks is called when two item stacks are combined (e.g., when picking up an item that matches one already in the inventory)
         public override void TryMergeStacks(ItemStackMergeOperation op)
         {
             base.TryMergeStacks(op);
         }
+        public override int GetMergableQuantity(ItemStack sinkStack, ItemStack sourceStack, EnumMergePriority priority)
+        {
+            return base.GetMergableQuantity(sinkStack, sourceStack, priority);
+        }
 
-
-
+        //get and set contents might be usable 
+        public override ItemStack[] GetContents(IWorldAccessor world, ItemStack itemstack)
+        {
+            return base.GetContents(world, itemstack);
+        }
+        public override void SetContents(ItemStack containerStack, ItemStack[] stacks)
+        {
+            base.SetContents(containerStack, stacks);
+        }
 
 
 
