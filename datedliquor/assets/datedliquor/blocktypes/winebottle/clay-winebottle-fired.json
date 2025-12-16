@@ -24,7 +24,7 @@
 		"map": { "base": "game:item/utility/map" }
 	},
 	"shape": {
-		"base": "block/clay/winebottle-opened"
+		"base": "block/clay/winebottle/empty"
 	},
 	"attributes": {
 		"scrollrackable": true,
@@ -64,7 +64,7 @@
 			"scale": 1.1
 		},
 		"minFill": 0.21,
-		"maxFill": 3.81,
+		"maxFill": 1.21,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
 		"corkedShapeLoc": "shapes/block/clay/winebottle-corked",
@@ -73,9 +73,9 @@
 		"liquidContainerProps": {
 			"capacityLitres": 2,
 			"transferSizeLitres": 0.1,
-			"emptyShapeLoc": "shapes/block/clay/winebottle-opened",
-			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"emptyShapeLoc": "shapes/block/clay/winebottle/empty",
+			"opaqueContentShapeLoc": "shapes/block/clay/winebottle/contents",
+			"liquidContentShapeLoc": "shapes/block/clay/winebottle/contents",
 			"liquidMaxYTranslate": 0.05
 		}
 	},

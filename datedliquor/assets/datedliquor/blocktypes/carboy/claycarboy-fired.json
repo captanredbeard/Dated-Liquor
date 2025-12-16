@@ -16,7 +16,7 @@
 		}
 	],
 	"shape": {
-		"*": { "base": "block/clay/carboy-opened" }
+		 "base": "block/clay/carboy/empty" 
 	},
 	"textures": {
 		"orange": { "base": "game:block/clay/hardened/{color}" }
@@ -43,15 +43,15 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
-		"corkedShapeLoc": "shapes/block/clay/carboy-corked",
+		"corkedShapeLoc": "shapes/block/clay/carboy/corked",
 		"bottlerackable": true,
-		"perishRate": 12,
+		"perishRate": 1,
 		"liquidContainerProps": {
-			"capacityLitres": 1,
+			"capacityLitres": 20,
 			"transferSizeLitres": 0.1,
 			"emptyShapeLoc": "shapes/block/clay/carboy-opened",
-			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"opaqueContentShapeLoc": "shapes/block/carboy/contents",
+			"liquidContentShapeLoc": "shapes/block/carboy/contents",
 			"liquidMaxYTranslate": 0.05
 		}
 	},

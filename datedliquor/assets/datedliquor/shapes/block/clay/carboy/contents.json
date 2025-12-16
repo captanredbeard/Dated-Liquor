@@ -1,0 +1,48 @@
+{
+	"editor": {
+		"backDropShape": "",
+		"collapsedPaths": "",
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"orange": [16,16],
+		"map": [32,32]
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "contents",
+			"from": [ 8.0, 1.0, 8.0 ],
+			"to": [ 8.0, 1.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 1.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false },
+				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "floor",
+					"from": [ -4.8, 0.05, -4.8 ],
+					"to": [ 4.8, 9.05, 4.8 ],
+					"renderPass": 0,
+					"rotationOrigin": [ -6.02, 0.0, -6.02 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 9.5, 9.0 ], "enabled": false },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 9.5, 9.0 ], "enabled": false },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 9.5, 9.0 ], "enabled": false },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 9.5, 9.0 ], "enabled": false },
+						"up": { "texture": "#waterportion", "uv": [ 0.0, 0.0, 9.6, 9.6 ], "autoUv": false, "snapUv": false },
+						"down": { "texture": "#waterportion", "uv": [ 0.0, 0.0, 5.4, 5.4 ], "autoUv": false, "snapUv": false }
+					}
+				}
+			]
+		}
+	]}

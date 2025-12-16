@@ -19,9 +19,6 @@
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
 	},
-	"shape": {
-		"base": "block/clay/growler-opened"
-	},
 	"attributes": {
 		"shelvable": true,
 		"handbook": {
@@ -37,14 +34,14 @@
 		"maxFill": 3.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
-		"corkedShapeLoc": "shapes/block/clay/growler-corked",
+		"corkedShapeLoc": "shapes/block/clay/growler/corked",
 		"perishRate": 1,
 		"liquidContainerProps": {
 			"capacityLitres": 9,
 			"transferSizeLitres": 0.1,
-			"emptyShapeLoc": "shapes/block/clay/growler-opened",
-			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+			"emptyShapeLoc": "shapes/block/clay/growler/empty",
+			"opaqueContentShapeLoc": "shapes/block/clay/growler/contents",
+			"liquidContentShapeLoc": "shapes/block/clay/growler/contents",
 			"liquidMaxYTranslate": 0.05
 		}
 	},
@@ -70,6 +67,13 @@
 			"__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility"
 		}
 	],
+	"shape": {
+		"base": "block/clay/growler/empty"
+	},
+	"textures": {
+		"orange": { "base": "game:block/clay/hardened/{color}" },
+		"map": { "base": "game:item/utility/map" }
+	},
 	"maxstacksize": 8,
 	"blockmaterial": "Ceramic",
 	"lightAbsorption": 0,
@@ -94,10 +98,6 @@
 		"x2": 0.65,
 		"y2": 0.375,
 		"z2": 0.65
-	},
-	"textures": {
-		"orange": { "base": "game:block/clay/hardened/{color}" },
-		"map": { "base": "game:item/utility/map" }
 	},
 	"resistance": 0.5,
 	"guiTransform": {

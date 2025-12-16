@@ -20,6 +20,9 @@
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
 	},
+	"shape": {
+		"base": "block/glass/carboy/empty"
+	},
 	"textures": {
 		"glass": { "base": "game:block/glass/{color}" },
 		"map": { "base": "game:item/utility/map" }
@@ -51,11 +54,11 @@
 			"allowHeldLiquidTransfer": true,
 			"perishRate": 1,
 			"liquidContainerProps": {
-				"capacityLitres": 9,
+				"capacityLitres": 20,
 				"transferSizeLitres": 0.1,
 				"emptyShapeLoc": "block/glass/carboy-opened",
-				"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
-				"liquidContentShapeLoc": "aculinaryartillery:shapes/block/carboy/contents",
+				"opaqueContentShapeLoc": "shapes/block/carboy/contents",
+				"liquidContentShapeLoc": "shapes/block/carboy/contents",
 				"liquidMaxYTranslate": 0.05
 			}
 		}

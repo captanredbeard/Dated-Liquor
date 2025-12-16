@@ -20,7 +20,11 @@
 		"datedliqour": [ "*" ]
 	},
 	"shape": {
-		"base": "block/glass/winebottle-opened"
+		"base": "block/glass/winebottle/empty"
+	},
+	"textures": {
+		"glass": { "base": "game:block/glass/{color}" },
+		"map": { "base": "game:item/utility/map" }
 	},
 	"attributes": {
 		"shelvable": true,
@@ -64,19 +68,19 @@
 				"z": 0
 			}
 		},
-		"corkedShapeLoc": "shapes/block/glass/winebottle-corked",
+		"corkedShapeLoc": "shapes/block/glass/winebottle/corked",
 		"bottlerackable": true,
 		"perishRate": 1,
 		"liquidContainerProps": {
 			"capacityLitres": 2,
 			"transferSizeLitres": 0.1,
-			"emptyShapeLoc": "shapes/block/glass/winebottle-opened",
-			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-			"liquidMaxYTranslate": 0.1
+			"emptyShapeLoc": "shapes/block/glass/winebottle/empty",
+			"opaqueContentShapeLoc": "shapes/block/clay/winebottle/contents",
+			"liquidContentShapeLoc": "shapes/block/clay/winebottle/contents",
+			"liquidMaxYTranslate": 0.05
 		}
 	},
-	
+
 	"drawtype": "JSON",
 	"replaceable": 1,
 	"behaviors": [
@@ -123,10 +127,6 @@
 		"x2": 0.65,
 		"y2": 0.375,
 		"z2": 0.65
-	},
-	"textures": {
-		"glass": { "base": "aculinaryartillery:block/bottle/{color}" },
-		"map": { "base": "game:item/utility/map" }
 	},
 	"resistance": 2,
 	"guiTransform": {

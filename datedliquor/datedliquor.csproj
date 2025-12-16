@@ -62,4 +62,9 @@
   </Content>
 </ItemGroup>
 
+<ItemGroup>
+  <Folder Include="assets\datedliquor\shapes\block\clay\growler\" />
+  <Folder Include="assets\datedliquor\shapes\block\glass\growler\" />
+</ItemGroup>
+
 </Project>

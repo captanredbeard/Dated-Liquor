@@ -22,7 +22,7 @@
 			"states": [ "raw" ]
 		}
 	],
-	"shape": { "base": "block/clay/carboy-opened" },
+	"shape": { "base": "block/clay/carboy/empty" },
 	"textures": {
 		"all": { "base": "game:block/clay/{color}clay" }
 	},

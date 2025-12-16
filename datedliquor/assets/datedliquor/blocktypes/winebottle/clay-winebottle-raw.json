@@ -141,7 +141,7 @@
 	},
 	"maxstacksize": 12,
 	"blockmaterial": "Ceramic",
-	"shape": { "base": "block/clay/winebottle-opened" },
+	"shape": { "base": "block/clay/winebottle/empty" },
 	"lightAbsorption": 0,
 	"sideopaque": { "all": false },
 	"sideao": { "all": true },

@@ -1,0 +1,5 @@
+{
+	soundsets: {
+		"bottle/corkpop": ["bottle/corkpop1", "bottle/corkpop2", "bottle/corkpop3"],
+	}
+}

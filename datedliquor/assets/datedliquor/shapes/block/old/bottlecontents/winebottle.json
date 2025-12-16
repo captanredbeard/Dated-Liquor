@@ -1,0 +1,57 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/glassBase/glassLid1",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"waterportion": [24, 24]
+	},
+	"textures": {
+		"waterportion": "block/liquid/waterportion"
+	},
+	"elements": [
+		{
+			"name": "contents",
+			"from": [0, 0, 0],
+			"to": [0, 0, 0],
+			"rotationOrigin": [0, 0, 0],
+			"children": [
+				{
+					"name": "lowercontents",
+					"from": [6.71, 0.711, 9.31],
+					"to": [9.29, 8.009, 11.89],
+					"rotationOrigin": [6.7, 0, 9.3],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0.5, 0.5, 3, 3], "rotation": 90, "autoUv": false, "snapUv": false},
+						"down": {"texture": "#waterportion", "uv": [0.75, 0.7, 3.25, 3.3], "autoUv": false, "snapUv": false}
+					},
+					"rotationY": 90,
+					"shade": false
+				},
+				{
+					"name": "upperconotents",
+					"from": [7.5, 8, 7.5],
+					"to": [8.5, 10.11, 8.5],
+					"rotationOrigin": [7.5, 10.11, 7.5],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [10.5, 7.5, 11.5, 8.5], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [11.5, 6.5, 12.5, 7.5], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [10.5, 7.5, 11.5, 8.5], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [11.5, 6, 12.5, 7], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false},
+						"down": {"texture": "#waterportion", "uv": [11.5, 10.5, 12.5, 11.5], "autoUv": false, "snapUv": false}
+					},
+					"shade": false
+				}
+			]
+		}
+	],
+	"animations": []
+}
