@@ -1,0 +1,56 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/glassBase/glassLid1",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"waterportion": [24, 24]
+	},
+	"textures": {
+		"waterportion": "game:block/liquid/waterportion"
+	},
+	"elements": [
+		{
+			"name": "contents",
+			"from": [0, 0, 4],
+			"to": [0, 0, 4],
+			"rotationOrigin": [0, 0, 4],
+			"children": [
+				{
+					"name": "watertop",
+					"from": [7.5, 7.8, 3.5],
+					"to": [8.5, 10.01, 4.5],
+					"rotationOrigin": [7.5, 8.61, 3.5],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [10.5, 7.5, 11.5, 8.5], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [11.5, 6.5, 12.5, 7.5], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [10.5, 7.5, 11.5, 8.5], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [11.5, 6, 12.5, 7], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 1, 1], "autoUv": false, "snapUv": false}
+					},
+					"shade": false
+				},
+				{
+					"name": "water",
+					"from": [6.71, 0.72, 5.31],
+					"to": [9.29, 7.8, 7.89],
+					"rotationOrigin": [6.7, 0.7, 5.3],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 6, 3, 14.233], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 6, 3, 14.233], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 6, 3, 14.233], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 6, 3, 14.233], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 6, 3, 9], "autoUv": false, "snapUv": false},
+						"down": {"texture": "#waterportion", "uv": [0, 6, 3, 9], "autoUv": false, "snapUv": false}
+					},
+					"rotationY": 90,
+					"shade": false
+				}
+			]
+		}
+	],
+	"animations": []
+}
