@@ -1,0 +1,92 @@
+{
+	"editor": {
+		"backDropShape": "",
+		"collapsedPaths": "Root/glassBase/glassLid1",
+		"allAngles": false,
+		"entityTextureMode": false,
+		"singleTexture": false,
+		"vsFormatConverted": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"glass": [32, 32],
+		"map": [16, 16],
+		"waterportion": [24, 24]
+	},
+	"textures": {
+		"waterportion": "block/glass/jug/waterportion"
+	},
+	"elements": [
+		{
+			"name": "contents",
+			"from": [0, 0, 0],
+			"to": [0, 0, 0],
+			"rotationOrigin": [0, 0, 0],
+			"children": [
+				{
+					"name": "bottom",
+					"from": [5.501, 0.602, 5.501],
+					"to": [10.481, 6.482, 10.481],
+					"rotationOrigin": [5, 0, 5],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 0, 10, 12], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 0, 10, 12], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 0, 10, 12], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 0, 10, 12], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 10, 10], "autoUv": false, "snapUv": false},
+						"down": {"texture": "#waterportion", "uv": [0, 0, 10, 10], "autoUv": false, "snapUv": false}
+					},
+					"shade": false,
+					"renderPass": 4
+				},
+				{
+					"name": "middle1",
+					"from": [6.01, 6.482, 6.01],
+					"to": [9.99, 7.492, 9.99],
+					"rotationOrigin": [5, 5.88, 5],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 0, 8, 2], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 0, 8, 2], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 0, 8, 2], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 0, 8, 2], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 8, 8], "autoUv": false, "snapUv": false}
+					},
+					"shade": false,
+					"renderPass": 4
+				},
+				{
+					"name": "middle2",
+					"from": [7.01, 7.492, 7.01],
+					"to": [8.99, 8.492, 8.99],
+					"rotationOrigin": [6, -0.11, 6],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 0, 4, 2], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 0, 4, 2], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 0, 4, 2], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 0, 4, 2], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 4, 4], "autoUv": false, "snapUv": false}
+					},
+					"shade": false,
+					"renderPass": 4
+				},
+				{
+					"name": "top",
+					"from": [7.51, 8.492, 7.51],
+					"to": [8.49, 9.652, 8.49],
+					"rotationOrigin": [6, -0.11, 6],
+					"faces": {
+						"north": {"texture": "#waterportion", "uv": [0, 0, 2, 2], "autoUv": false, "snapUv": false},
+						"east": {"texture": "#waterportion", "uv": [0, 0, 2, 2], "autoUv": false, "snapUv": false},
+						"south": {"texture": "#waterportion", "uv": [0, 0, 2, 2], "autoUv": false, "snapUv": false},
+						"west": {"texture": "#waterportion", "uv": [0, 0, 2, 2], "autoUv": false, "snapUv": false},
+						"up": {"texture": "#waterportion", "uv": [0, 0, 2, 2], "autoUv": false, "snapUv": false}
+					},
+					"shade": false,
+					"renderPass": 4
+				}
+			]
+		}
+	],
+	"animations": []
+}

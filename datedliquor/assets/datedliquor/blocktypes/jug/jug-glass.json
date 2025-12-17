@@ -15,7 +15,7 @@
     "general": [ "*" ],
     "datedliqour": [ "*" ]
   },
-  "shape": { "base": "block/glass/jug-opened" },
+  "shape": { "base": "block/glass/jug/empty" },
   "textures": {
     "all": {
       "base": "game:block/glass/{color}",
@@ -74,14 +74,14 @@
     "handbook": {
       "groupBy": [ "jugglass-*-{state}" ]
     },
-    "corkedShapeLoc": "block/glass/jug-corked",
+    "corkedShapeLoc": "block/glass/jug/corked",
     "perishRate": 1,
     "liquidContainerProps": {
       "capacityLitres": 3,
       "transferSizeLitres": 0.1,
-      "emptyShapeLoc": "block/glass/jug-opened",
-      "opaqueContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
-      "liquidContentShapeLoc": "aculinaryartillery:shapes/block/bottle/contents",
+      "emptyShapeLoc": "block/glass/jug/empty",
+      "opaqueContentShapeLoc": "shapes/block/glass/jug/contents",
+      "liquidContentShapeLoc": "shapes/block/glass/jug/contents",
       "liquidMaxYTranslate": 0.05
     }
   },
