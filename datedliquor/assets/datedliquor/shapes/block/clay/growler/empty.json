@@ -30,12 +30,12 @@
 							"to": [5.5, 9.001, 0.8],
 							"rotationOrigin": [0, 0, 0],
 							"faces": {
-								"north": {"texture": "#orange", "uv": [0, 0, 4, 6], "autoUv": false, "snapUv": false},
-								"east": {"texture": "#orange", "uv": [0, 0, 0.8, 6], "autoUv": false, "snapUv": false},
-								"south": {"texture": "#orange", "uv": [0, 0, 4, 6], "autoUv": false, "snapUv": false},
-								"west": {"texture": "#orange", "uv": [0, 0, 0.8, 6], "autoUv": false, "snapUv": false},
-								"up": {"texture": "#orange", "uv": [0, 0, 4, 0.8], "autoUv": false, "snapUv": false},
-								"down": {"texture": "#orange", "uv": [0, 0, 4, 0.8], "autoUv": false, "snapUv": false}
+								"north": {"texture": "#orange", "uv": [0, 0, 4, 6], "autoUv": false, "snapUv": false, "enabled": false},
+								"east": {"texture": "#orange", "uv": [0, 0, 0.8, 6], "autoUv": false, "snapUv": false, "enabled": false},
+								"south": {"texture": "#orange", "uv": [0, 0, 4, 6], "autoUv": false, "snapUv": false, "enabled": false},
+								"west": {"texture": "#orange", "uv": [0, 0, 0.8, 6], "autoUv": false, "snapUv": false, "enabled": false},
+								"up": {"texture": "#orange", "uv": [0, 0, 4, 0.8], "autoUv": false, "snapUv": false, "enabled": false},
+								"down": {"texture": "#orange", "uv": [0, 0, 4, 0.8], "autoUv": false, "snapUv": false, "enabled": false}
 							},
 							"renderPass": 0
 						},

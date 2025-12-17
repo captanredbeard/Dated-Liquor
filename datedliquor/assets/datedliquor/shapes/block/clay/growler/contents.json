@@ -28,7 +28,7 @@
 						"up": {"texture": "#waterportion", "uv": [0, 0, 5.4, 5.4], "autoUv": false, "snapUv": false},
 						"down": {"texture": "#waterportion", "uv": [0, 0, 5.4, 5.4], "autoUv": false, "snapUv": false}
 					},
-					"renderPass": 0
+					"renderPass": 4
 				},
 				{
 					"name": "middle",
@@ -39,7 +39,7 @@
 						"up": {"texture": "#waterportion", "uv": [0, 0, 4, 4], "autoUv": false, "snapUv": false}
 					},
 					"rotationY": 90,
-					"renderPass": 0
+					"renderPass": 4
 				}
 			]
 		}

@@ -61,12 +61,10 @@
 							"to": [ 9.62, 12.5, 1.22 ],
 							"renderPass": 0,
 							"faces": {
-								"north": { "texture": "#orange", "uv": [ 0.0, 0.0, 6.88, 10.5 ], "autoUv": false, "snapUv": false },
-								"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 10.5 ], "enabled": false },
-								"south": { "texture": "#orange", "uv": [ 0.0, 0.0, 4.0, 6.0 ], "autoUv": false, "snapUv": false },
-								"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 10.5 ], "enabled": false },
-								"up": { "texture": "#orange", "uv": [ 0.0, 0.0, 7.2, 1.2 ], "autoUv": false, "snapUv": false },
-								"down": { "texture": "#orange", "uv": [ 0.0, 0.0, 4.0, 0.8 ], "autoUv": false, "snapUv": false }
+								"north": { "texture": "#orange", "uv": [ 0.0, 0.0, 6.88, 10.5 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"south": { "texture": "#orange", "uv": [ 0.0, 0.0, 4.0, 6.0 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"up": { "texture": "#orange", "uv": [ 0.0, 0.0, 7.2, 1.2 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"down": { "texture": "#orange", "uv": [ 0.0, 0.0, 4.0, 0.8 ], "autoUv": false, "snapUv": false , "enabled": false}
 							}
 						},
 						{
@@ -125,12 +123,10 @@
 							"rotationOrigin": [ 7.1849, -0.001, 7.5093 ],
 							"rotationY": 45.0,
 							"faces": {
-								"north": { "texture": "#orange", "uv": [ 0.0, 0.0, 3.6464, 10.501 ], "autoUv": false, "snapUv": false },
-								"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 10.5 ], "enabled": false },
-								"south": { "texture": "#orange", "uv": [ 0.0, 0.0, 2.12, 6.0 ], "autoUv": false, "snapUv": false },
-								"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 10.5 ], "enabled": false },
-								"up": { "texture": "#orange", "uv": [ 0.0, 0.0, 3.3941, 1.2 ], "autoUv": false, "snapUv": false },
-								"down": { "texture": "#orange", "uv": [ 0.0, 0.0, 2.12, 0.7 ], "autoUv": false, "snapUv": false }
+								"north": { "texture": "#orange", "uv": [ 0.0, 0.0, 3.6464, 10.501 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"south": { "texture": "#orange", "uv": [ 0.0, 0.0, 2.12, 6.0 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"up": { "texture": "#orange", "uv": [ 0.0, 0.0, 3.3941, 1.2 ], "autoUv": false, "snapUv": false , "enabled": false},
+								"down": { "texture": "#orange", "uv": [ 0.0, 0.0, 2.12, 0.7 ], "autoUv": false, "snapUv": false , "enabled": false}
 							}
 						},
 						{
