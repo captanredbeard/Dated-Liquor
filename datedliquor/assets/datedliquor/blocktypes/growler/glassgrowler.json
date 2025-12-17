@@ -20,7 +20,7 @@
 		"datedliqour": [ "*" ]
 	},
 	"shape": {
-		"base": "block/glass/growler-opened"
+		"base": "block/glass/growler/empty"
 	},
 	"textures": {
 		"glass": { "base": "game:block/glass/{color}" },
@@ -38,19 +38,19 @@
 			]
 		},
 		"minFill": 0.21,
-		"maxFill": 3.81,
+		"maxFill": 0.81,
 		"minFillSideways": 6.7,
 		"maxFillSideways": 9.3,
 		"isClear": true,
-		"corkedShapeLoc": "block/glass/growler-corked",
+		"corkedShapeLoc": "shapes/block/glass/growler/corked",
 		"growlerrackable": true,
 		"perishRate": 1,
 		"liquidContainerProps": {
 			"capacityLitres": 9,
 			"transferSizeLitres": 0.1,
-			"emptyShapeLoc": "block/glass/growler-opened",
-			"opaqueContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
-			"liquidContentShapeLoc": "aculinaryartillery:shapes/block/growler/contents",
+			"emptyShapeLoc": "shapes/block/glass/growler/empty",
+			"opaqueContentShapeLoc": "shapes/block/glass/growler/contents",
+			"liquidContentShapeLoc": "shapes/block/glass/growler/contents",
 			"liquidMaxYTranslate": 0.05
 		}
 	},

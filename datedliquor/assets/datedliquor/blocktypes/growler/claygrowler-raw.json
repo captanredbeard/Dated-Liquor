@@ -18,7 +18,7 @@
 		"general": [ "*" ],
 		"datedliqour": [ "*" ]
 	},
-	"shape": { "base": "block/clay/growler-opened" },
+	"shape": { "base": "block/clay/growler/empty" },
 	"textures": { "all": { "base": "game:block/clay/{color}clay" } },
 	"attributes": {
 		"shelvable": true,
