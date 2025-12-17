@@ -71,17 +71,20 @@
       "scale": 0.6
     },
     "shelvable": true,
+    "isClear": true,
     "handbook": {
       "groupBy": [ "jugglass-*-{state}" ]
     },
     "corkedShapeLoc": "block/glass/jug/corked",
     "perishRate": 1,
+    "minFill": 0.21,
+    "maxFill": 0.61,
     "liquidContainerProps": {
       "capacityLitres": 3,
       "transferSizeLitres": 0.1,
       "emptyShapeLoc": "block/glass/jug/empty",
-      "opaqueContentShapeLoc": "shapes/block/glass/jug/contents",
-      "liquidContentShapeLoc": "shapes/block/glass/jug/contents",
+      "opaqueContentShapeLoc": "block/glass/jug/contents",
+      "liquidContentShapeLoc": "block/glass/jug/contents",
       "liquidMaxYTranslate": 0.05
     }
   },
