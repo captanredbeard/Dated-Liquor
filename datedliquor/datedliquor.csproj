@@ -45,7 +45,7 @@
       <Private>False</Private>
     </Reference>
 	  <Reference Include="ACulinaryArtillery">
-		  <HintPath>$(Project)/external/ACulinaryArtillery.dll</HintPath>
+		  <HintPath>"C:/Users/Daniel/source/repos/Vintage Story/ACulinaryArtillery/bin/Debug/Mods/mod/ACulinaryArtillery.dll"</HintPath>
 		  <Private>False</Private>
 	  </Reference>
   </ItemGroup>

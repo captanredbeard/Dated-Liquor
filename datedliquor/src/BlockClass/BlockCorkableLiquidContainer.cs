@@ -20,20 +20,17 @@ namespace datedliquor.src.BlockClass
     public class BlockCorkableLiquidContainer : BlockLiquidContainerTopOpened//, IContainedInteractable
     {
         /*
+         * Properly
          * 
-         * Add an attribute to corked containers for the date that they were corked/sealed.
          * 
-         * Read that date and compare to the current date, display it in a format defined in the cfg file.        
          * 
-         * recorking a partially emptied bottle does not update the date on the container, and the older date is used until emptied or one of the above contitions occur.
          * 
-         * when a bottle is uncorked/uncapped, the date remains displayed on the bottle.
          * 
-         * If more liquid is added to the bottle, or the bottle is emptied, then the bottle loses the date attribute. 
-         *        
-         * add the ability to cork/uncork a bottle while it's placed in the world
          * 
-        */
+         * 
+         * 
+         * 
+         */
 
         private MeshData origcontainermesh;
 
@@ -317,6 +314,7 @@ namespace datedliquor.src.BlockClass
         */
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
+            /*
             IPlayer player = (byEntity as EntityPlayer)?.Player;
             if (player != null && blockSel == null && entitySel == null && itemslot.Itemstack.Attributes.TryGetBool("corked") == true)
             {
@@ -358,37 +356,34 @@ namespace datedliquor.src.BlockClass
 
                 (api as ICoreClientAPI)?.TriggerIngameError(this, "fulloffhandslot", Lang.Get("aculinaryartillery:bottle-fulloffhandslot"));
             }
-
+            */
             base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
         }
 
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
-            /*
             IPlayer player = (byEntity as EntityPlayer)?.Player;
-            if (player != null && blockSel == null && entitySel == null && Corked && secondsUsed > 0.5)
+            if (player != null && blockSel == null && entitySel == null && itemslot.Itemstack.Attributes.TryGetBool("corked") == true)
             {
-                ItemSlot itemSlot = player.InventoryManager?.OffhandHotbarSlot;
-                if (itemSlot != null && (itemSlot.Empty || itemSlot.Itemstack.Collectible.FirstCodePart() == "cork"))
+                ItemSlot offhandSlot = player.InventoryManager?.OffhandHotbarSlot;
+                ItemStack corkStack = itemslot.Itemstack.Attributes.GetItemstack("corkStack");
+                if (offhandSlot != null && (offhandSlot.Empty || offhandSlot.Itemstack.Collectible.Code == corkStack.Collectible.Code))
                 {
                     ItemStack itemstack = itemslot.Itemstack.Clone();
-                    itemstack.StackSize = 1;
-                    //itemstack.Attributes.SetItemstack("corkStack", );
 
-                    itemstack.Attributes.SetBool("corked", true);
-                    itemstack.Attributes.SetBool("canDrinkFrom", false);
-                    itemstack.Attributes.SetBool("isTopOpened", false);
-                    itemstack.Attributes.SetBool("allowHeldLiquidTransfer", false);
+                    itemstack.StackSize = 1;
+                    itemstack.Attributes.SetItemstack("corkStack", new ItemStack());
+                    itemstack.Attributes.SetBool("corked", false);
+                    itemstack.Attributes.SetBool("canDrinkFrom", true);
+                    itemstack.Attributes.SetBool("isTopOpened", true);
+                    itemstack.Attributes.SetBool("allowHeldLiquidTransfer", true);
 
                     if (itemslot.StackSize == 1)
                     {
-                        corkStack = itemstack;
                         itemslot.Itemstack = itemstack;
-                        OnCorkContainer(itemslot, byEntity);
                     }
                     else
                     {
-     
                         itemslot.TakeOut(1);
                         itemslot.MarkDirty();
                         if (!player.InventoryManager.TryGiveItemstack(itemstack, slotNotifyEffect: true))
@@ -396,17 +391,18 @@ namespace datedliquor.src.BlockClass
                             byEntity.World.SpawnItemEntity(itemstack, byEntity.Pos.AsBlockPos);
                         }
                     }
-
-                    ItemStack itemStack = new ItemStack(byEntity.World.GetItem("aculinaryartillery:cork-generic"));
-                    if (new DummySlot(itemStack).TryPutInto(byEntity.World, itemSlot) <= 0)
+                    OnUncorkContainer(itemslot, byEntity);
+                    ItemStack itemStack = corkStack ?? new ItemStack(byEntity.World.GetItem("aculinaryartillery:cork-generic"));
+                    if (new DummySlot(itemStack).TryPutInto(byEntity.World, offhandSlot) <= 0)
                     {
                         byEntity.World.SpawnItemEntity(itemStack, byEntity.Pos.AsBlockPos);
                     }
                     return false;
                 }
+
+                (api as ICoreClientAPI)?.TriggerIngameError(this, "fulloffhandslot", Lang.Get("aculinaryartillery:bottle-fulloffhandslot"));
             }
-            
-            */
+
             return base.OnHeldInteractStep(secondsUsed, itemslot, byEntity, blockSel, entitySel);
         }
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
@@ -494,7 +490,7 @@ namespace datedliquor.src.BlockClass
         {
 
             ItemSlot sourceSlot = op.SourceSlot;
-
+            if(op.SinkSlot.)
             if (!Corked && op.CurrentPriority == EnumMergePriority.DirectMerge)
             {
                 Vintagestory.API.Datastructures.JsonObject itemAttributes = sourceSlot.Itemstack.ItemAttributes;
